@@ -76,6 +76,59 @@
       <p class="hint">Prices are examples for this class project and are not an actual price list.</p>
     </section>
 
+    <section class="section" aria-labelledby="gallery-heading">
+      <h2 id="gallery-heading">Our Work</h2>
+      <div class="gallery" id="gallery" role="group" aria-roledescription="carousel" aria-label="Photo gallery of our repair services">
+        <figure class="gallery-figure">
+          <!-- First image is in the HTML so the page still works without JavaScript -->
+          <img class="gallery-image" id="gallery-image" src="images/gallery-tuneup.svg"
+               alt="Illustration of a small engine with a spark plug on the workbench" width="600" height="400">
+          <figcaption class="gallery-caption" id="gallery-caption">Seasonal tune-up: spark plug, oil, and air filter service.</figcaption>
+        </figure>
+        <div class="gallery-controls">
+          <button class="button" type="button" id="gallery-prev">&larr; Previous</button>
+          <p class="gallery-counter" id="gallery-counter" aria-live="polite">Image 1 of 4</p>
+          <button class="button" type="button" id="gallery-next">Next &rarr;</button>
+        </div>
+        <ul class="gallery-thumbs" id="gallery-thumbs" aria-label="Choose an image"></ul>
+        <p class="hint">Tip: use the left and right arrow keys to move through the gallery.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">Frequently Asked Questions</h2>
+      <button class="button" type="button" id="faq-toggle-all" data-state="collapsed" hidden>Expand all answers</button>
+      <div class="faq-list">
+        <h3 class="faq-heading">
+          <button class="faq-question" type="button" id="faq-q1" aria-expanded="false" aria-controls="faq-a1">Do you charge for estimates?</button>
+        </h3>
+        <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1">
+          <p>No. Estimates are always free, and we call you before doing any work beyond what we quoted.</p>
+        </div>
+
+        <h3 class="faq-heading">
+          <button class="faq-question" type="button" id="faq-q2" aria-expanded="false" aria-controls="faq-a2">How long will my repair take?</button>
+        </h3>
+        <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2">
+          <p>Most jobs take 2&ndash;5 days depending on the equipment and parts. See the pricing table above for typical turnaround times.</p>
+        </div>
+
+        <h3 class="faq-heading">
+          <button class="faq-question" type="button" id="faq-q3" aria-expanded="false" aria-controls="faq-a3">Do you offer pickup and delivery?</button>
+        </h3>
+        <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3">
+          <p>Yes, for larger equipment such as riding mowers. Mention it in your estimate request and we will arrange a time.</p>
+        </div>
+
+        <h3 class="faq-heading">
+          <button class="faq-question" type="button" id="faq-q4" aria-expanded="false" aria-controls="faq-a4">What should I do before winter storage?</button>
+        </h3>
+        <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4">
+          <p>Add fuel stabilizer or run the tank dry, change the oil, and clean the air filter. Or bring it in for a seasonal tune-up and we will handle it.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="section">
       <h2>Ready to Get Started?</h2>
       <p>Tell us what's wrong and we'll send you a free estimate.</p>
@@ -84,9 +137,12 @@
   </main>
 
   <footer class="site-footer">
-    <p>&copy; 2026 Harvey's Small Engine Repair Shop. All rights reserved.</p>
+    <p>&copy; <span id="year">2026</span> Harvey's Small Engine Repair Shop. All rights reserved.</p>
   </footer>
 
   <script src="JS/nav.js"></script>
+  <script src="JS/site.js"></script>
+  <script src="JS/gallery.js"></script>
+  <script src="JS/faq.js"></script>
 </body>
 </html>

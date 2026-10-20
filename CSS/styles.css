@@ -232,6 +232,105 @@ legend { font-weight: bold; padding: 0 6px; }
   .service-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* ---------- Gallery (JS/gallery.js) ---------- */
+.gallery-figure { margin: 0 0 12px; }
+.gallery-image {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border: 2px solid hsl(0, 0%, 70%);
+  border-radius: 6px;
+  background: var(--bg);
+}
+.gallery-caption { text-align: center; font-style: italic; margin-top: 8px; }
+.gallery-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-bottom: 12px;
+}
+.gallery-counter { font-weight: bold; margin: 0; min-width: 8rem; text-align: center; }
+.gallery-thumbs {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+/* Controls only make sense with JavaScript; hide them until it runs. */
+.gallery:not(.is-ready) .gallery-controls,
+.gallery:not(.is-ready) .gallery-thumbs,
+.gallery:not(.is-ready) .hint { display: none; }
+.gallery-thumb {
+  padding: 0;
+  border: 3px solid transparent;
+  border-radius: 6px;
+  background: none;
+  cursor: pointer;
+  line-height: 0;
+}
+.gallery-thumb img { border-radius: 3px; }
+.gallery-thumb:hover { border-color: hsl(0, 0%, 50%); }
+.gallery-thumb.is-active { border-color: var(--green); }
+
+/* ---------- FAQ accordion (JS/faq.js) ---------- */
+.faq-list { margin-top: 12px; }
+.faq-heading { margin: 0; }
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 14px 16px;
+  margin-top: 8px;
+  border: 1px solid hsl(0, 0%, 60%);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  font: bold 1rem "Trebuchet MS", Arial, sans-serif;
+  text-align: left;
+  cursor: pointer;
+}
+.faq-question::after { content: "+"; font-size: 1.4rem; margin-left: 12px; }
+.faq-question.is-open { background: var(--navy); color: var(--white); }
+.faq-question.is-open::after { content: "\2212"; }
+.faq-question:hover { border-color: var(--green); }
+.faq-answer { padding: 4px 16px 8px; border-left: 4px solid var(--green); margin: 4px 0 0; }
+
+/* ---------- Form feedback (JS/form.js) ---------- */
+.error-message { color: hsl(0, 70%, 35%); font-weight: bold; font-size: 0.95rem; margin: 4px 0 0; }
+.error-message::before { content: "\26A0\FE0E  "; }
+input.has-error, select.has-error, textarea.has-error {
+  border-color: hsl(0, 70%, 35%);
+  background: hsl(0, 100%, 98%);
+}
+.error-summary {
+  border: 3px solid hsl(0, 70%, 35%);
+  border-radius: 6px;
+  background: hsl(0, 100%, 97%);
+  padding: 4px 16px 8px;
+  margin-bottom: 16px;
+}
+.error-summary h3 { color: hsl(0, 70%, 35%); }
+.confirmation {
+  border: 3px solid var(--green);
+  border-radius: 6px;
+  background: hsl(88, 40%, 95%);
+  padding: 4px 16px 16px;
+}
+.error-summary[hidden], .confirmation[hidden], .error-message[hidden], form[hidden],
+.button[hidden] { display: none; }
+
+/* ---------- Open / closed badge (JS/site.js) ---------- */
+.open-status { font-weight: bold; }
+.is-open-now { color: hsl(120, 60%, 22%); }
+.is-closed-now { color: var(--red); }
+
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
 }
